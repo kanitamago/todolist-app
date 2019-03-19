@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %}
+詳細ページ
+{% endblock %}
+<!--メイン領域-->
+{% block body %}
+<div class="row detail-area myclearfix">
+  <div class="text-area">
+    <p class="main-text"><span id="head-letter">{{ todo_item.text[0] | safe }}</span>{{ todo_item.text[1:] | safe }}</p>
+    <span id="detail-time">投稿日時: {{ todo_item.created_at }}</span>
+  </div>
+  <div class="detail-sub">
+    <form id="delete-form" action="{{ url_for('delete', id=todo_item.id) }}" method="post">
+      <button class="btn btn-danger btn-lg delete-btn" type="submit" name="button">削除</button>
+    </form>
+    {% if clear_item.clear_flag == 0 %}
+      <form id="clear-form" action="{{ url_for('clear', id=todo_item.id) }}" method="post">
+        <button class="btn btn-info btn-lg clear-btn" type="submit" name="button">オールクリア</button>
+      </form>
+    {% else %}
+      <span class="bg-dark text-white text-center btn-lg cleared-btn" name="button">クリア済み</span>
+      <p class="clear-at">{{ clear_item.clear_at }} 完了
+        <img class="clear-image" src="../static/uploads/clear/{{ image }}" alt="グッド画像">
+      </p>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}

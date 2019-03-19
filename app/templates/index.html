@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %}
+トップページ
+{% endblock %}
+<!--メイン領域-->
+{% block body %}
+{% if todo_items %}
+  {% for todo_item, clear_item, fight_image, clear_image, fight_word, clear_word in todo_items %}
+    <div class="item">
+      {% if clear_item.clear_flag == 0 %}
+        <img class="icon" src="../static/uploads/fight/{{ fight_image }}" alt="ファイト画像">
+        <span class="fight-message">{{ fight_word }}</span>
+      {% else %}
+        <img class="icon" src="../static/uploads/clear/{{ clear_image }}" alt="クリア画像">
+        <span class="clear-message">{{ clear_word }}</span>
+      {% endif %}
+      <a class="detail-link" href="{{ url_for('detail', id=todo_item.id) }}">
+        <div class="content">
+          <p>{{ todo_item.text | safe }}</p>
+        </div>
+        <p class="create-time">{{ todo_item.created_at[:10] }}</p>
+      </a>
+    </div>
+  {% endfor %}
+{% else %}
+    <p id="not-item">登録されているリストがありません</p>
+{% endif %}
+{% endblock %}

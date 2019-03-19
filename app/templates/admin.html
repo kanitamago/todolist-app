@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block title %}
+管理者画面
+{% endblock %}
+
+<!--メイン領域-->
+{% block body %}
+<form class="admin-form" action="/uploads/fight" method="post" enctype="multipart/form-data">
+  <p class="image-title"><strong class="big-word">応援コメント</strong>を貰いたい人物の画像を指定してください</p>
+  <div class="fight-area form-group p-4">
+    <!--<label for="fight_image">
+      <input class="" type="file" name="image">
+    </label>-->
+    <input class="" type="file" name="image">
+    <button class="btn btn-primary" type="submit" name="button">画像を保存する</button>
+  </div>
+</form>
+<form class="admin-form mb-4" action="/input/fight" method="post">
+  <p class="comment-title">応援コメントを入力してください</p>
+  <div class="fight-area form-group p-4">
+    <input class="p-2" type="text" name="fight_text" placeholder="頑張って！">
+    <button class="btn btn-primary ml-3" type="submit" name="button">コメントを保存する</button>
+  </div>
+</form>
+<form class="admin-form" action="/uploads/clear" method="post" enctype="multipart/form-data">
+  <p class="image-title"><strong class="big-word">お疲れ様コメント</strong>を貰いたい人物の画像を指定してください</p>
+  <div class="clear-area form-group p-4">
+    <!--<label for="clear_image">
+      <input class="rounded" type="file" name="image">
+    </label>-->
+    <input class="" type="file" name="image">
+    <button class="btn btn-primary" type="submit" name="button">画像を保存する</button>
+  </div>
+</form>
+<form class="admin-form" action="/input/clear" method="post">
+  <p class="comment-title">お疲れ様コメントを入力してください</p>
+  <div class="clear-area form-group p-4">
+    <input class="p-2" type="text" name="clear_text" placeholder="例：お疲れ様！">
+    <button class="btn btn-primary ml-3" type="submit" name="button">コメントを保存する</button>
+  </div>
+</form>
+{% endblock %}

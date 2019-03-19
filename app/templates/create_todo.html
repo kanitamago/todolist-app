@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}
+作成画面
+{% endblock %}
+<!--メイン領域-->
+{% block body %}
+<div class="create-area">
+  <form action="{{ url_for('create_todo') }}" method="post">
+    <div class="form-group">
+      <textarea class="form-control todo-item" id="InputText" name="text"></textarea>
+    </div>
+    <button class="btn btn-primary mb-3 todo-create" type="submit" name="button">登録</button>
+  </form>
+</div>
+{% endblock %}

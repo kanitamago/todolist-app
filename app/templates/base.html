@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>{% block title %}{% endblock %}｜Todoリスト</title>
+    <link rel="stylesheet" href ="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src=" https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  </head>
+  <body>
+    <div class="container">
+      <!--ナビゲーション-->
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/">Todoリスト</a>
+        <ul class="nav navbar-nav navbar-right">
+          {% if not session.logged_in %}
+            <li>
+              <a class="text-white nav-link bg-dark rounded ml-3" href="{{ url_for('show_createTodo') }}">作成</a>
+            </li>
+            <li>
+              <a class="text-white nav-link bg-dark rounded ml-3" href="{{ url_for('login') }}">ログイン</a>
+            </li>
+          {% else %}
+            <li>
+              <a class="text-white nav-link bg-dark rounded ml-3" href="{{ url_for('show_createTodo') }}">作成</a>
+            </li>
+            <li>
+              <a class="text-white nav-link bg-dark rounded ml-3" href="{{ url_for('admin') }}">管理者画面</a>
+            </li>
+            <li>
+              <a class="text-white nav-link bg-dark rounded ml-3" href="{{ url_for('logout') }}">ログアウト</a>
+            </li>
+          {% endif %}
+        </ul>
+      </nav>
+      <!--メイン領域-->
+      {% for message in get_flashed_messages() %}
+      <div id="myalert" class="alert alert-info p-3" role="alert">
+        {{ message }}
+      </div>
+      {% endfor %}
+      <div class="todo-container myclearfix">
+        {% block body %}
+        {% endblock %}
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,15 @@
+﻿<Todoリストの構成>
+必要なファイル：
+index.html => 作成したリストの閲覧画面
+create_todo.html => Todoリストを作成する画面
+ページ遷移：
+index => create_todo.html
+create_todo.html(submit) => index.html
+
+index.html：
+・3行4列のリストボックス
+・リスト作成ボタン
+
+create_todo.html：
+・textarea要素
+・作成ボタン

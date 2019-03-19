@@ -1,0 +1,228 @@
+body{
+  background-image: url("../images/bg.jpg");
+  background-repeat: repeat;
+}
+#myalert{
+  margin: 0;
+  padding: 0;
+}
+/*トップページ*/
+.todo-container{
+  background-color: rgba(0, 0, 0, 0.3);
+  min-height: 100px;
+  margin-bottom: 30px;
+  padding-left: 22px;
+  padding-bottom: 22px;
+  padding-top: 15px;
+}
+.myclearfix::after{
+  content: "";
+  display: block;
+  clear: both;
+}
+.item{
+  position: relative;
+  box-sizing: border-box;
+  float: left;
+  width: 250px;
+  height: 370px;
+  background-color: white;
+  margin-right: 22px;
+  margin-top: 22px;
+  margin-bottom: 20px;
+  padding-top: 32px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.icon{
+  position: absolute;
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  top: -18px;
+  left: -18px;
+  border-radius: 100%;
+  background-size: cover;
+}
+.fight-message{
+  position: absolute;
+  top: -25px;
+  left: 40px;
+  background-color: #FFFF99;
+  /*border: 0.5px solid gray;*/
+  border-radius: 5px;
+  padding: 5px;
+}
+.fight-message::before{
+  position: absolute;
+  content: "▼";
+  color: #FFFF99;
+  display: block;
+  width: 10px;
+  height: 10px;
+  bottom: 2px;
+  left: 0px;
+  transform: rotate(45deg);
+}
+.clear-message{
+  position: absolute;
+  top: -25px;
+  left: 40px;
+  background-color: #FFBBFF;
+  /*border: 0.5px solid gray;*/
+  border-radius: 5px;
+  padding: 5px;
+}
+.clear-message::before{
+  position: absolute;
+  content: "▼";
+  color: #FFBBFF;
+  display: block;
+  width: 10px;
+  height: 10px;
+  bottom: 2px;
+  left: 0px;
+  transform: rotate(45deg);
+}
+.detail-link{
+  display: inline-block;
+  color: black;
+  width: 100%;
+  height: 100%;
+}
+.detail-link:hover{
+  text-decoration: none;
+  color: black;
+}
+.create-time{
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 80px;
+  margin: 5px auto;
+}
+#not-item{
+  text-align: center;
+  padding-top: 40px;
+  color: white;
+}
+
+/*リスト作成ページ*/
+.create-area{
+  text-align: center;
+}
+.todo-item{
+  display: inline-block;
+  width: 350px;
+  height: 250px;
+  margin-top: 30px;
+}
+.todo-create{
+  width: 100px;
+  height: 50px;
+}
+
+/*詳細ページ*/
+.detail-area{
+  position: relative;
+  width: 95%;
+  margin: 0 auto;
+}
+.text-area{
+  box-sizing: border-box;
+  position: relative;
+  width: 600px;
+  min-height: 300px;
+  background-color: white;
+  padding: 20px;
+  color: black;
+  font-size: 30px;
+  bottom: 0;
+}
+#head-letter{
+  color: gray;
+  font-size: 50px;
+  margin-right: 5px;
+}
+.main-text{
+  display: inline-block;
+  margin-bottom: 50px;
+}
+#detail-time{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  background-color: black;
+  color: white;
+  font-size: 20px;
+}
+
+.detail-sub{
+  width: 450px;
+  height: 100%;
+}
+.delete-btn{
+  position: absolute;
+  width: 200px;
+  bottom: 0;
+  right: 210px;
+}
+.clear-btn{
+  position: absolute;
+  width: 200px;
+  bottom: 0;
+  right: -10px;
+}
+.cleared-btn{
+  position: absolute;
+  width: 200px;
+  bottom: 0;
+  right: -10px;
+}
+.clear-at{
+  position: absolute;
+  top: -50px;
+  right: 350px;
+  color: #8B0000;
+  width: 250px;
+  height: 250px;
+  text-align: center;
+  line-height: 250px;
+  border-radius: 100%;
+  font-weight: bold;
+  transform: rotate(45deg);
+}
+.clear-image{
+  position: absolute;
+  border: 3px solid #8B0000;
+  right: 0px;
+  z-index: -9999;
+  width: 250px;
+  height: 250px;
+  border-radius: 100%;
+  opacity: 0.75;
+}
+
+/*管理者画面*/
+.image-title{
+  margin: 10px auto;
+  color: white;
+  font-weight: bold;
+}
+.comment-title{
+  margin: 10px auto;
+  color: white;
+  font-weight: bold;
+}
+.big-word{
+  font-size: 25px;
+}
+.fight-area{
+  background-color: rgba(255, 255, 255, 0.5);
+}
+.clear-area{
+  background-color: rgba(255, 255, 255, 0.5);
+}
