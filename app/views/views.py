@@ -96,6 +96,7 @@ def index():
 def show_createTodo():
     return render_template("create_todo.html")
 
+
 @app.route("/create/post", methods=["POST"])
 def create_todo():
     text = request.form["text"]
